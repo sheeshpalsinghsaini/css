@@ -1,0 +1,163 @@
+
+
+
+
+/* 
+============================================== Box Model ====================================================
+CSS Box model is a fundamental concept in web design that defines how elements on a webpage are structure and how 
+their dimensions are calculated. It consists of four main components. 
+    1. Content
+    2. Padding 
+    3. Borders 
+    4. Margins
+
+
+1. Content: area where text, images or other content apperas. It is the innermost part of the box.
+    Example: 
+
+        div { 
+            width: 200px;
+            height: 100px;
+        }
+            here div element has a content area that is 200px wide and 100px height.
+
+2. Padding: is the space between the content and the border. It adds space inside the element, around the content. 
+    Example: 
+
+        div{ 
+            padding: 20px;
+        }
+            there is 20px of space inside the element, between the content and the border.
+
+
+3. Border: wraps around the padding (if any) and content. It can have various styles, thicknesses, and colors.
+    Example: 
+        
+        div { 
+            border: 2px solid black;
+        }
+            this adds a 2px thick, solid black border around the element.
+
+    
+4. Margin: space outside the border. It create space between the element and other elements on the page. 
+    Example: 
+        div { 
+            margin: 10px; 
+        }
+            this adds 10px of space outside the element, separating it from other elements. 
+
+
+Box Model Visualization:
+    Content: The main area where your text or images are.
+    Padding: The space inside the box, around the content.
+    Border: The line surrounding the padding and content.
+    Margin: The space outside the border, separating the box from other elements.
+
+
+
+
+
+======================================== Box Sizing =============================================== 
+box-sizing property controls how the total width and height of an element are calculated. By default, the width and height 
+only include the content, but with `box-sizing: border-box`; the widht and height include padding and border as well. 
+
+* Values: 
+    - `content-box`: (Default) width and height include only the content. Padding and border are added outside. 
+    - `border-box`: width and height include content, padding and border. 
+
+        div {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+Example: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Example</title>
+    <style>
+        .box {
+            width: 200px; /* Content width 
+            height: 100px; /* Content height 
+            padding: 20px; /* Space inside the box 
+            border: 5px solid blue; /* Border around the box 
+            margin: 15px; /* Space outside the box 
+            box-sizing: border-box; /* Includes padding and border in the width and height 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">This is a box!</div>
+
+</body>
+</html>
+
+
+Explanation:
+    Width and Height: The content area is 200px wide and 100px high.
+    Padding: 20px of space is added inside the box, around the content.
+    Border: A 5px thick blue border surrounds the padding and content.
+    Margin: 15px of space is added outside the border, separating this box from other elements.
+    Box-Sizing: Because box-sizing: border-box; is used, the total width of the box remains 200px and the height remains 100px, including padding and border.
+
+
+
+
+Visual Breakdown:
+    Content: 200px x 100px area where text or images are displayed.
+    Padding: 20px of space around the content, inside the border.
+    Border: 5px thick blue line around the padding and content.
+    Margin: 15px of space outside the border, separating the element from others
+
+
+Why box-sizing: border-box; is Useful:
+    Using box-sizing: border-box; makes it easier to size elements. When you add padding or borders, you don’t have to adjust the width and height to keep the element the same size. The padding and border are included within the dimensions you set, making layout calculations more straightforward.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

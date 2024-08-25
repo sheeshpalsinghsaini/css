@@ -1,0 +1,154 @@
+
+
+
+/* 
+    1. Font Families: property in css allow you to specify the type of font used for text. You can lsit multiple font as a 
+        "fallback" system. If the browser doesn't support the first font, it will try the next one and so on. 
+
+        * Syntax: 'font-family: "Font name", fallback-font, generic-family;' 
+
+        example: 
+            
+            p { 
+                font-family: "Arial", "Helvetica", sans-serif; 
+            }
+    In this example, the text will first try to use Arial. If Arial isn't available, it will try Helvetica.
+    If neither is available, it will default to any sans-serif font.
+        
+
+
+    2. Font Sizes 
+
+        the font-size property sets the size of the text. You can specify the size in various units pixels(px) ems, rems 
+        percentages(%) etc. 
+
+            Syntax: 'font-size: size_value;' 
+
+            example: 
+
+                h1 { 
+                    font-size: 36px; // large text size 
+                }
+                p { 
+                    font-size: 16px; // standard text size 
+                }
+
+    3. Text Alignment 
+
+        The text-align property controls the horizontal alignment of text within its container. You can align text to the 
+        left, right, center, or justify if ( spacing it out so that it fills the entire line ). 
+
+        * Syntax: 'text-align: alignment_value;'
+
+        example: 
+
+            h1 { 
+                text-align: center; // center the text 
+            }
+            p { 
+                text-align: justify; // justify the text ( align both left and right edges ) 
+            }
+
+    In this example, the text in the <h1> element will be centered, while the text in the <p> element will be justified, 
+    aligning both the left and right edges.        
+
+
+
+    4. Text Decoration: 
+
+        The text-decoration property adds decorative effects to text, such as underlines, overlines, or line-throughs (strikethroughts). 
+
+        Example: 
+            a { 
+                text-decoration: underline; // underline the text 
+            }
+            del { 
+                text-decoration: line-through; // strike through the text
+            }
+      In this example, links (<a>) will have an underline, and the <del> element (usually used to indicate deleted text) will have a line through it.          
+
+
+
+
+
+Example 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text and Fonts</title>
+    <style>
+        body {
+            font-family: "Verdana", "Geneva", sans-serif; /* Set a default font for the body 
+            font-size: 16px; /* Set the base font size 
+        }
+
+        h1 {
+            font-size: 36px; /* Large text for headings 
+            text-align: center; /* Center the heading 
+        }
+
+        p {
+            text-align: justify; /* Justify paragraph text 
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links 
+            color: blue; /* Set link color to blue 
+        }
+
+        del {
+            text-decoration: line-through; /* Strike through deleted text 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+
+    <p>This is an example of how to use text and font properties in CSS. The text in this paragraph is justified, which means that it is aligned along both the left and right margins.</p>
+
+    <p>You can visit <a href="#">this link</a> for more information. This link has no underline, which is controlled by the text-decoration property.</p>
+
+    <p><del>This is an example of deleted text.</del></p>
+
+</body>
+</html>
+
+
+
+
+Explanation of the Example:
+    Font Family: The entire page uses the Verdana font as the primary choice, with Geneva as the fallback, and a generic sans-serif font if neither is available.
+    Font Size: The body has a base font size of 16px, but the heading <h1> is much larger at 36px.
+    Text Alignment: The heading is centered, while paragraphs are justified.
+    Text Decoration: Links (<a>) have no underline (which is the default for links), and deleted text (<del>) has a line through it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

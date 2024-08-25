@@ -1,0 +1,508 @@
+/* 
+
+
+Selectors (Element, Class, ID, Universal, Grouping)
+    - A CSS selector selects the HTML element(s) you want to style.
+
+We can divide CSS selectors into five categories:
+    1. Simple selectors ( select elements based on name, id, class )
+    2. Combinator selectors ( select elements based on a specific relationship between them ) 
+    3. Pseudo-class selector ( select elements based on a certain state ) 
+    4. Pseudo-element selectors ( select and style a part of an element) 
+    5. Attribute selector ( select elements based on an attribute or attribute value ) 
+
+
+1. Simple selectors: 
+    a. element selector: The element selector selects HTML elements based on the element name.
+
+        p {
+            text-align: center;
+            color: red;
+            }
+---------------------------------------------------------------------------------
+    b. id selector: 
+        - The id selector uses the id attribute of an HTML element to select a specific element.
+        - The id of an element is unique within a page, so the id selector is used to select one unique element!
+        - To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+        #para1 {
+            text-align: center;
+            color: red;
+            }
+
+Note: An id name cannot start with a number
+---------------------------------------------------------------------------------
+
+    c. class selector: The class selector selects HTML elements with a specific class attribute.
+            - To select elements with a specific class, write a period (.) character, followed by the class name.
+
+            .center {
+                    text-align: center;
+                    color: red;
+                    }
+
+            You can also specify that only specific HTML elements should be affected by a class.
+
+            p.center {
+                    text-align: center;
+                    color: red;
+                    }
+
+Note: A class name cannot start with a number
+--------------------------------------------------------------------------------
+
+    d. universal selector: The universal selector (*) selects all HTML elements on the page.
+
+            * {
+                text-align: center;
+                color: blue;
+                }
+
+--------------------------------------------------------------------------------
+
+    e. grouping selector: grouping selector select all the html element where we need to add same style definition to all.
+
+        h1, h2, p {
+            text-align: center;
+            color: red;
+        }
+
+
+
+
+
+===================================== Combination selectors =====================================================
+    A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+
+        there are four different combinators in CSS.
+
+            1. descendant selector ( space ) 
+            2. child selector ( > ) 
+            3. adjacent sibling selector ( + ) 
+            4. general sibling selector ( ~ ) 
+
+    
+
+    1. Descendant selector ( space ): The descendant selector matches all elements that are descendants of a specified element.
+                                      The following example selects all <p> elements inside <div> elements:
+
+        div p {
+                background-color: yellow;
+            }
+
+    2. child selector ( > ): The child selector selects all elements that are the children of a specified element.
+                             The following example selects all <p> elements that are children of a <div> element:
+
+        div > p {
+                background-color: yellow;
+            }
+
+    3. Adjacent Sibling Selector (+):  used to select an element that is directly after another specific element.
+            Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+
+            The following example selects the first <p> element that are placed immediately after <div> elements:
+
+            div + p {
+                background-color: yellow;
+            }
+
+    4. General Sibling selector ( ~ ): The general sibling selector selects all elements that are next siblings of a specified element.
+                    The following example selects all <p> elements that are next siblings of <div> elements: 
+
+            div ~ p {
+                background-color: yellow;
+            }
+
+
+
+============================================= Pseudo-class selector ===============================================
+What are Pseudo-classes? 
+    A pseudo-class is used to define a special state of an element.
+    
+    for example, it can be used to: 
+        - Style an element when a user mouses over it.
+        - Style visited and unvisited links differently. 
+        - Style an element when it gets focus.
+
+
+    Syntax of pseudo-classes
+        selector:pseudo-class {
+                 property: value;
+            }
+
+
+Anchor Pseudo-classes:
+    links can be displayed in different ways
+    
+    // unvisited link 
+    a:link{
+    color: #FF0000;
+    }
+
+    // visited link
+    a:visited {
+    color: #00FF00;
+    }
+
+    // mouse over link 
+    a:hover{
+    color: #FF00FF;
+    }
+
+    // selected link 
+    a:active{
+    color: #0000FF;
+    }
+
+Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+
+
+
+
+
+* Pseudo-classes and HTML Classes: 
+
+    Pseudo-classes can be combined with HTML classes. in the example, when you hover over the link color will change.
+
+    a.highlight:hover{
+        color: #ff0000;
+    }
+
+    Hover on <div> 
+        an exmaple of using the :hover pseudo-class on a <div> element.
+
+        div:hover{
+            background-color: blue;
+        }
+
+
+    Simple Tooltip Hover
+        Hover over a div element to show a <p> element ( like a tooltip ): 
+        
+        p{
+        display: none;
+        background-color: yellow;
+        padding: 20px;
+        }
+
+        div:hover p{
+        display: block;
+        }
+
+
+* :first-child pseudo-class 
+        matches a specified element that is the first child of another element.
+        in the following example, the selector matches any <p> element that is the first child of any element.
+
+        p:first-child{
+            color: blue;
+        }
+
+        Match the first <i> element in all <p> elements
+        In the following example, the selector matches the first <i> element in all <p> elements;
+
+        p i:first-child{
+        color: blue;
+        }
+
+
+        Match all <i> elements in all first child <p> elements 
+        In the following example, the selector matches all <i> elements in <p> elements that are the first child of another element.
+
+        p:first-child{
+        color: blue;
+        }
+
+
+
+========================================== Pseudo-elements ======================================
+A CSS pseudo-element is used to style specified parts of an element.
+    - Style the first letter, or line, of an element.
+    - Insert content before, or after, the content of an element.
+
+
+Syntax of pseudo-elements: 
+    
+    selector::pseudo-element {
+        property: value;
+    }
+
+
+    
+   ** ::first-line pseudo-element is used to add a special style to the first line of a text.
+            the following example formats the first line of the text in all <p> elements: 
+
+        p::first-line {
+            color: #ff0000;
+            font-variant: small-caps;
+        }
+
+
+Note the ::first-line pseudo-element can only be applied to block-level elements.
+
+    the following properties apply to the ::first-line pseudo-element:
+
+        - font properties 
+        - color properties 
+        - background properties 
+        - word-spacing 
+        - letter-spacing 
+        - text-decoration
+        - vertical-align 
+        - text-transform 
+        - line-height 
+        - clear 
+
+Notice: the double colon notation - ::first-line versus :first-line
+    The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements.
+    The single-colon syntax was used for both pseudo-classes and pseudo-elements in CSS2 and CSS1.
+    For backward compatibility, the single-colon syntax is acceptable for CSS2 and CSS1 pseudo-elements. 
+-------------------------------------------------------------------------------
+
+
+    ** ::first-letter pseudo-element 
+    
+        ::first-letter pseudo-element is used to add a special style to the first letter of a text.
+
+            the following example formats the first letter of the text in all <p> elements.
+
+        p::first-letter {
+            color: #ff0000;
+            font-size: xx-large;
+        }
+
+Note: ::first-letter pseudo-element is can only be applied to block level elements.
+
+    the following properties apply to the ::first-letter pseudo-element.
+
+        - font properties 
+        - color properties 
+        - background properties 
+        - margin properties 
+        - padding properties 
+        - border properties 
+        - text-decoration
+        - vertical-align ( only if "float" is "none") 
+        - text-transform
+        - line-height 
+        - float 
+        - clear 
+
+    Pseudo-elements and HTML classes: can be combined with HTML classes.
+
+        p.intro::first-letter { 
+            color: #ff0000;
+            font-size: 200%;
+        }
+
+        the example above will display the first letter of paragraphs with class="intro", in red and in large size.
+
+
+    Multiple Pseudo-elements 
+
+        Several pseudo-elements can also be combined.
+
+        In the following example, the first letter of a paragraph will be red, in an xx-large font size. The rest of the 
+        first line will be blue, and in small caps. the rest of the paragraph will be the default font size and color.
+
+        p::first-letter {
+            color: #ff0000;
+            font-size: xx-large;
+        }
+
+        p::first-line { 
+            color: #0000ff;
+            font-variant: small-caps;
+        }
+------------------------------------------------------------------------------------------
+
+    ** ::before pseudo-element 
+            ::before pseudo-element can be used to insert some content before and content of an element.
+
+                the following exmaple inserts an image before the conent of each of each <h1> element. 
+
+                h1::before { 
+                    conent: url(smiley.fig);
+                }
+
+
+-----------------------------------------------------------------------------------------
+
+    ** ::after Pseudo-element 
+
+        ::after pseudo-element can be used to insert some content after the content of an element.
+
+            the following example inserts an image the content of each <h1> element.
+
+            h1::after{
+                content: url(smiley.fig);
+            }
+
+---------------------------------------------------------------------------------------
+
+    ** ::marker Pseudo-element: selects the markers of list items.
+
+        the following example style the markets of list items.
+
+            ::marker { 
+                color: red;
+                font-size: 23px;
+            }
+
+
+---------------------------------------------------------------------------------------
+
+    ** ::selection Pseudo-element 
+
+        ::selection pseudo-element matches the portion of an element that is selected by a user.
+
+            the following css properties can be applied to ::selection
+                - color
+                - background
+                - cursor
+                - outline .
+
+        example 
+
+            ::selection{ 
+                color: red;
+                background: yellow;
+            }
+
+
+
+======================================== Attribute Selectors ========================================
+
+    Style HTML elements with specific attributes. 
+
+ ** the [attribute] selector is used to select elements with a specifict attribute. 
+    the following example selects all <a> elements with a target attribute: 
+
+        a[target] {
+            background-color: yellow;
+        }
+
+
+-------------------------------------------------------------------------------------
+
+ ** the [attribute="value"] selector is used to select elements with a specified attribute and value.
+
+    the following example selects all <a> elements with a target="_blank" attribute: 
+
+        a[target="_blank"] { 
+            background-color: yellow;
+        }
+
+
+--------------------------------------------------------------------------------------
+
+ ** [attribute ~= "value" ] selector is used to selects elements with an attribute value containing a specified word.
+
+    the following example selects all elements with a title attribute that contains a space-separated list of words, one 
+    of which is "flower": 
+
+        [title~="flower"] {
+            border: 5px solid yellow; 
+        }
+
+    the example above will match elements with title="flower", title="summer flower", and title="flower new", but not 
+    title="my-flower" or title="flowers". 
+
+    
+----------------------------------------------------------------------------------------
+
+ ** [attribute |= "value"] selector is used to select elements with the specified attribute, whose value can be exactly 
+    the specified value, or the specified value followed by a hyphen (-).
+
+    Note: the value has to be a whole word, either alone, like class="top", or followed by a hyphen ( - ), like class="top-text". 
+
+    example. 
+
+        [class |= "top"] {
+            background: yellow;
+        }
+
+----------------------------------------------------------------------------------------
+
+ ** [attribute ^="value"] selector is used to select element with the specified attribute, whose value starts with 
+    the specified value. 
+
+    the following example selects all elements with a class attribute value that start with "top": 
+
+Note: the value does not have to be a whole words!
+
+    [class^="top"] {
+        background: yellow;
+    }
+
+
+---------------------------------------------------------------------------------------
+
+ ** [attribute$="value"] selector is used to select elements whose attributes value ends with a specified value. 
+
+    the following example selects all elements with a class attribute value that ends with "test": 
+
+Note: The value does not have to be a whole word! 
+
+    [class$="test"] {
+        background: yellow;
+    }
+
+--------------------------------------------------------------------------------------
+
+ ** [attribute*="value"] selector is used to select elements whose attribute value contains a specified value. 
+    
+        the following example selects all elements with a class attribute value that contains "te": 
+
+Note: The value does not have to be a whole word! 
+
+    example: 
+        [class*="te"] { 
+            background: yellow; 
+        }
+
+
+-----------------------------------------------------------------------------------------
+
+    Styling forms: 
+        The attribute selectors can be useful for styling forms without class or ID.
+
+        example: 
+
+            input[type="text"] {
+                width: 150px; 
+                display: block; 
+                margin-bottom: 10px; 
+                background-color: yellow; 
+            }
+
+            input[type="button"] {
+                width: 120px; 
+                margin-left: 35px; 
+                display: blcok;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

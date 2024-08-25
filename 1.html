@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to add CSS</title>
+    <style>
+        h2{
+            color: aqua;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/01_AddingCSS.css">
+    
+</head>
+<body>
+    <!-- <h2 style="color: antiquewhite; background-color: orchid;">How to add css in html</h2> -->
+    <h2>How to add css in html</h2>
+
+</body>
+</html>
+
+<!-- 
+
+    Three ways to insert CSS 
+        1. External CSS : Each HTML page must include a reference to the external style sheet file inside the <link> element, inside the head section.
+                <link rel="stylesheet" href="mystyle.css">
+
+                body {
+                background-color: lightblue;
+                }
+
+                h1 {
+                color: navy;
+                margin-left: 20px;
+                }
+
+        2. Internal CSS : An internal style sheet may be used if one single HTML page has a unique style.
+                          The internal style is defined inside the <style> element, inside the head section.
+
+                    <html>
+                        <head>
+                            <style>
+                                body {
+                                background-color: linen;
+                                }
+
+                                h1 {
+                                color: maroon;
+                                margin-left: 40px;
+                                }
+                            </style>
+                        </head>
+                        <body>
+
+                            <h1>This is a heading</h1>
+                            <p>This is a paragraph.</p>
+
+                        </body>
+                    </html>
+
+
+
+        3. Inline CSS : An inline style may be used to apply a unique style for a single element.
+                        add the style attribute to the relevant element
+
+                        <html>
+                            <body>
+
+                                <h1 style="color:blue;text-align:center;">This is a heading</h1>
+                                <p style="color:red;">This is a paragraph.</p>
+
+                            </body>
+                        </html>
+
+
+Note: when link tag define after style, then like of external file will effiected. means which property define in last that will 
+      be effective. it means inline css has heighest priority.
+
+order of css.
+        Inline style (inside an HTML element)
+        External and internal style sheets (in the head section)
+        Browser default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
