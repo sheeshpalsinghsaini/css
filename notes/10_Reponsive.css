@@ -1,0 +1,23 @@
+/*
+
+Common Breakpoints:
+Mobile (Smartphones)
+
+Small: 320px - 480px
+Medium: 480px - 600px
+Large: 600px - 767px
+Tablet
+
+768px - 1024px
+Desktop (Standard)
+
+Small: 1024px - 1280px
+Medium: 1280px - 1440px
+Large: 1440px - 1920px
+Large Desktop / Ultra-wide Screens
+
+Above 1920px (often considered for screens 27 inches and larger)
+Ideal Approach for Responsive Design:
+Mobile-first approach: Start with the smallest screen size (mobile) and progressively add breakpoints for larger screens.
+Flexibility for Larger Screens: For larger desktops, like 27-inch monitors or ultra-wide screens, use max-width constraints and min-width media queries to ensure content doesn't become too stretched or hard to read. Also, use percentages or viewport units (like vw and vh) to make layouts more fluid.
+*/

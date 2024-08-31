@@ -1,0 +1,111 @@
+
+
+
+/*
+
+    "media query" is a feature that allows you to apply CSS styles conditionally, based on the characteristics of the device or browser window, such as its width, height, orientation, resolution, etc. This is particularly useful for creating responsive designs that adapt to different screen sizes.
+
+
+    Basic Concept of Media Queries
+        A media query is used to apply styles only if certain conditions (like the width of the screen) are true.
+        if the condition is met, the css inside the media query will be applied.
+
+
+    Syntax of a Media Query 
+
+        @media (condition){
+            // css rules
+        }
+
+    * @media: this is the keyword that start the media query.
+    * condition: this specified the condition that needs to be met ( like screen width).
+    * {} : this is where you please the css rules that will be applied if the condition is true.
+
+
+
+----------------------------------------------------------
+    Example 1: Simple media query for screen width. 
+
+        Let's say you want to change the background color of a page when the screen width is 600 pixels or less.
+        you can write a media query like this:
+
+
+            body{
+                background-color: white; // default background
+            }
+
+            @media (max-width: 600px){
+                background-color: lightblue; // change background for small screens.
+            }
+
+
+
+    Example 2: Applying Different styles for larger screens
+
+        You might want to apply different styles when the screen is larger than 800p pixels.
+
+            @media (min-width: 801px){
+                body{
+                    font-size: 18px;
+                    padding: 20px
+                }
+            }
+
+
+    Example 3: Combining Multiple Conditions: 
+
+        you can combine multiple condition using 'and', 'or', and 'not' keywords. 
+
+            @media (min-width: 600px) and (max-width: 1200px){
+                body{
+                    background-color: yellow;
+                }
+            }
+
+
+
+    Example 4: Orientation-based media query 
+
+        you can also apply styles based on the orientation of the device (whether it's in landscape or portrait mode.)
+
+            @media (orientation: landscape){
+                body{
+                    background-color: green;
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

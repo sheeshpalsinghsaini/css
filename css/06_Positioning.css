@@ -1,161 +1,45 @@
+#outer-container{
+    border: 1px solid black;
+    width: 300px;
+    height: 105px;
+    display: flex;
+    padding: 1px;
+    background-color: aquamarine;
 
-/* 
-========================= Positioning (Static, Relative, Absolute, Fixed, Sticky, Z-index) =======================
-Positioning in CSS determines how an element is placed on a webpage. There are several positioning methods available: Static, Relative, Absolute, Fixed, and Sticky. These positioning types are crucial for controlling the layout and layering of elements
+}
 
+#inner-container-01{
+    position: relative; /*occupy its position, not disturb other container position.*/
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    background-color: bisque;
+    top: 110px; /*top, left measure from window body.*/
+    left: 300px;
+}
 
+#inner-container-02{
+    position: absolute; /*leave its position, and other container occupy its position*/
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    background-color: brown;
+    top: 110px; /*top, left measure from its parent container.*/
+    left: 300px;
+}
 
-1. Static Positioning: 
-    - elements are positioned according to the normal document flow. They appear in the order they are written in the HTML.
-    - No special positioning: you can not use top, right, bottom left properties with static positioning. 
-
-    Example: 
-        .static-box{ 
-            position: static // this is the default, so it is not necessary to specify 
-            background-color: lightblue;
-        }
-
-        <div class="static-box"> This is a static box. </div> 
-
-    - the box appears in its normal position withing the document flow. 
-
-
-
-2. Relative Positioning: 
-    - element is positioned relative to its normal position. top, right, bottom and left properties will move the element relative to 
-      where it would normally be. 
-    - Does not affect surrounding elements: Even though the element moves, other element around it remain in their positions. 
-
-    Example: 
-        .relative-box {
-                position: relative;
-                top: 20px; /* Moves the box 20px down 
-                left: 30px; /* Moves the box 30px to the right 
-                background-color: lightgreen;
-            }
-
-        <div class="relative-box">This is a relative box.</div>
-
-
-3. Absolute Positioning: 
-    - Positioned related to the nearest positioned ancestor: if there is no positioned ancestor ( an element with position set to 
-      relative, absolute, fixed or sticky), it is positioned relative to the initial containing block ( usually the browser window). 
-    - Removed from normal document flow: Other elements behave as if this element does not exist. 
-        .absolute-box {
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            background-color: lightcoral;
-        }
-        .relative-parent {
-            position: relative; /* This makes it the reference point for the absolutely positioned box 
-            height: 200px;
-            background-color: lightyellow;
-        }
-
-        <div class="relative-parent">
-            This is a relative parent.
-            <div class="absolute-box">This is an absolute box.</div>
-        </div>
-
-Behavior: The .absolute-box is positioned 50px from the top and left of the .relative-parent element. It is removed from the normal flow, so it does not affect other elements.
-
-
-
-
-4. Fixed Positioning: 
-    - Fixed to the viewport: the element ispositioned relative to the browser window(viewport) and does not move when the page is scrolled. 
-    - Remove from normal document flow: Other element behave as if this element does not exist.
-
-        .fixed-box {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: lightblue;
-        }
-
-        <div class="fixed-box">This is a fixed box.</div>
-
-    Behavior: The box is fixed to the top-right corner of the viewport and remains there even when you scroll the page.
-
-
-
-
-5. Sticky Positioning: 
-    - Hybrid between relative and fixed: the element is positioned relative to its normal position unit it reaches a certain scroll 
-      position, after which it become fixed. 
-    - Useful for sticky headers: Often used to keep header or navigation bars at the top of the screen as the user scrolls down.
-
-        .sticky-box {
-            position: sticky;
-            top: 0; /* Stick to the top of its container when scrolled to 
-            background-color: lightpink;
-            padding: 10px;
-        }
-
-        <div class="sticky-box">This is a sticky box.</div>
-        <p>Lots of content here...</p> <!-- Add enough content to make the page scroll -->
-
-Behavior: The box behaves like a relative element until you scroll to its position, at which point it "sticks" to the top of the viewport.
-
-
-=============================================== Z-index ===========================================
- - Controls stacking order: The z-index property determines the vertical stacking order of positioned elements (elements with position set to relative, absolute, fixed, or sticky).
- - Higher values in front: Elements with a higher z-index value appear in front of elements with a lower value.
-
-
-        .box1 {
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            width: 100px;
-            height: 100px;
-            background-color: lightblue;
-            z-index: 1; /* Lower stacking order 
-        }
-
-        .box2 {
-            position: absolute;
-            top: 70px;
-            left: 70px;
-            width: 100px;
-            height: 100px;
-            background-color: lightgreen;
-            z-index: 2; /* Higher stacking order 
-        }
-
-        <div class="box1">Box 1</div>
-        <div class="box2">Box 2</div>
-
-Behavior: Even though .box2 is positioned later in the HTML and overlaps .box1, it appears in front because it has a higher z-index.
-
-
-Summary
-    Static: Default positioning, elements are placed according to the normal document flow.
-    Relative: Positioned relative to its original position, leaving space where it would normally be.
-    Absolute: Positioned relative to the nearest positioned ancestor or the viewport if none exists; removed from normal flow.
-    Fixed: Positioned relative to the viewport and does not move when the page is scrolled; removed from normal flow.
-    Sticky: Behaves like relative until it reaches a certain scroll position, then sticks to that position (like fixed).
-    Z-index: Controls the stacking order of positioned elements, determining which element appears on top.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
+#inner-container-03{
+    position: fixed; /*leave it's position*/
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    background-color: black;
+    border-radius: 100px;
+}
+body{
+    height: 1500px;
+    background-color: wheat;
+}

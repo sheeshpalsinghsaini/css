@@ -1,169 +1,20 @@
-
-/* ================================== Flex ===================================
-    Flexbox, or the Flexible Box Layout, is a powerful layout module in CSS designed to help you create flexible and responsive layouts with ease. It allows you to distribute space and align items within a container, even when their size is unknown or dynamic. Flexbox is particularly useful for designing complex layouts with simple CSS rules.
-
-
-
-Basic Concepts of Flexbox
-    1. Flex Container: The parent element that has 'display: flex;' or 'display: inline-flex;'. this container holds the flex items.
-    2. Flex Items: The child of a flex container that will be arranged according to the flexbox rules. 
-
-
-Creating Flexingle Layouts: 
-    to create a flexible layout, you start by defining a flex container using 'display: flex;'. Inside this container, the items(children) 
-    will automatically become flex items, and you can control their size and distribution. 
-
-Basic Flexbox Example: 
-
-<head>
-    <style>
-        .flex-container {
-            display: flex;
-            background-color: lightgray;
-            padding: 10px;
-        }
-        .flex-item{
-            background-color: cornflowerblue;
-            padding: 20px;
-            margin: 10px;
-            color: white;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">Item_01</div>
-        <div class="flex-item">Item_02</div>
-        <div class="flex-item">Item_03</div>
-        <div class="flex-item">Item_04</div>
-    </div>
-</body>
-
-
-Explanation:
-    Flex Container (.flex-container):
-    display: flex; makes the container a flexbox, causing its children (the .flex-item elements) to behave as flex items.
-    The items are arranged in a row by default (side by side horizontally).
-    Flex Items (.flex-item):
-    These items are now flex items. They will automatically resize to fit the available space within the flex container.
-
-
-
-
-
-2. Aligning and Justifying Content: 
-    Flexbox provides powerful alignment and justification options to control how flex items are distributed and aligned within their container.
-
-    Aligning Items: ------------------------------------------------------------
-        * 'align-items' controls the alignment of items along the cross axis ( vertical axis when flex-direction is 'row').
-
-    Common values: 
-        * 'flex-start': Align items at the start of the container ( top for row, left for column).
-        * 'flex-end': Aligns items at the end of the container ( bottom for row, right for column). 
-        * 'center': Aligns items in the center of the container.
-        * 'stretch': Stretches items to fill the container (default).
-        * 'baseline': Aligns items along their baselines.
-
-
-    .flex-container{
-        display: flex;
-        height: 200px; // set a height to demonstrate alignment
-        align-items: center // Aligns items in the center vertically.
-    }
-
-
-    Justifying Content: --------------------------------------------------------
-        * 'justify-content': control the alignment of items alsong the main axis ( horizontal axis when flex-direction is 'row')
-
-    Common Values: 
-        * flex-start: Items are packed toward the start of the container.
-        * flex-end: Items are packed toward the end of the container.
-        * center: Items are centered along the main axis.
-        * space-between: Items are evenly distributed with the first item at the start and the last item at the end.
-        * space-around: Items are evenly distributed with equal space around them.
-        * space-evenly: Items are evenly distributed with equal space between them.
-
-    Example: 
-
-        .flex-container{
-            display: flex;
-            justify-content: space-between; // distributes items with space between them. 
-        }
-
+#outer-container{
+    width: 600px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    /* align-items: flex-end; */ /*change vertically.*/
+    align-items: center;
     
+    /* justify-content: end; */
+    justify-content: center;
+}
 
-    <head>
-        <style>
-            .flex-container{
-                display: flex;
-                height: 200px;
-                background-color: lightgray;
-                justify-content: space-between // space between items horizontally.
-                align-items: center; // center items vertically
-                padding: 10px;
-            }
-
-            .flex-item{
-                background-color: cornflowerblue;
-                padding: 20px;
-                margin: 10px;
-                color: white;
-                text-align: center;
-                flex: 1; // flex-grow: items grow to fill availabe space equally.
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="flex-container">
-            <div class="flex-item">Item_01</div>
-            <div class="flex-item">Item_02</div>
-            <div class="flex-item">Item_03</div>
-        </div>
-    </body>
-
-
-
-
-Explanation:
-
-    Justify Content (justify-content: space-between;):
-        The flex items are spaced out with equal gaps between them. The first item is aligned with the start of the container, and the last item is aligned with the end.
-    Align Items (align-items: center;):
-        The flex items are centered vertically within the container.
-    Flex Grow (flex: 1;):
-        The items will grow to fill the available space equally, making the layout responsive.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
+.inner-container{
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    margin: 5px;
+    background-color: rgb(205, 50, 151);
+    /* display: inline-block; */
+}
